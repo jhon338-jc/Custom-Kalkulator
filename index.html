@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#1a092c">
-    <meta name="description" content="Kalkulator dengan custom CSS - Style Comic Punk!">
+    <meta name="description" content="Kalkulator dengan custom CSS">
     <title>⚡ JHON CSS KALKULATOR</title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
@@ -13,20 +13,20 @@
 </head>
 <body>
     <div class="app">
-        <!-- SISI KIRI - COMIC CARD -->
+        <!-- SISI KIRI -->
         <aside class="sidebar">
             <div class="logo">
                 <h1>⚡JHON CSS⚡</h1>
-                <p>Tempel / Generate CSS untuk kalkulator kamu!</p>
+                <p>Tempel kode CSS untuk mengubah tampilan kalkulator!</p>
             </div>
             
-            <!-- AREA PROMPT AI -->
+            <!-- AREA PROMPT AI - DIPERBESAR -->
             <div class="ai-prompt-area">
                 <div class="prompt-label">
                     <span>🤖 AI PROMPT GENERATOR</span>
                     <button id="copyPromptBtn" class="copy-prompt-btn">📋 SALIN</button>
                 </div>
-                <textarea id="aiPrompt" rows="3" placeholder="Contoh prompt untuk AI:&#10;&#10;'Buatkan CSS untuk kalkulator dengan tema comic punk, warna ungu keemasan, tombol kotak tebal, efek pressed, gaya komik'"></textarea>
+                <textarea id="aiPrompt" rows="5" placeholder="Contoh prompt untuk AI..."></textarea>
                 <button id="generateWithAI" class="ai-generate-btn">
                     ✨ GENERATE DENGAN AI
                 </button>
@@ -45,27 +45,15 @@
                     </div>
                 </div>
                 <textarea id="cssInput" placeholder="/* Tulis atau tempel CSS custom kamu di sini */
-/* Hasil dari AI bisa langsung tempel di sini! */"></textarea>
+/* Hasil dari AI langsung tempel di sini, lalu klik TERAPKAN */"></textarea>
             </div>
             
             <div class="action-buttons">
                 <button id="applyBtn" class="btn-primary">✨ TERAPKAN CSS</button>
             </div>
-            
-            <div class="templates">
-                <h3>📚 TEMPLATE SIAP PAKAI</h3>
-                <div class="template-grid">
-                    <button class="template-card" data-template="comic-punk">💥 COMIC PUNK</button>
-                    <button class="template-card" data-template="neon">💚 NEON HIJAU</button>
-                    <button class="template-card" data-template="glass">🔮 GLASSMORPH</button>
-                    <button class="template-card" data-template="galaxy">🌌 GALAXY</button>
-                    <button class="template-card" data-template="minimal">⚪ MINIMALIS</button>
-                    <button class="template-card" data-template="sunset">🌅 SUNSET</button>
-                </div>
-            </div>
         </aside>
         
-        <!-- SISI KANAN - PREVIEW KALKULATOR -->
+        <!-- SISI KANAN - PREVIEW KALKULATOR UKURAN HP -->
         <main class="main">
             <div class="calculator-preview">
                 <div class="preview-label">📱 LIVE PREVIEW</div>
