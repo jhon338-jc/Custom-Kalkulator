@@ -1,0 +1,12 @@
+{
+  "name": "kalkulator-custom-css",
+  "version": "1.0.0",
+  "description": "Kalkulator dengan custom CSS PWA",
+  "main": "api/theme.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
