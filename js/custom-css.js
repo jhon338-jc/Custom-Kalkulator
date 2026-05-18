@@ -5,7 +5,6 @@ class CustomCSSManager {
         this.applyBtn = document.getElementById('applyBtn');
         this.resetBtn = document.getElementById('resetBtn');
         this.clearBtn = document.getElementById('clearBtn');
-        this.templateBtns = document.querySelectorAll('.template-card');
         this.aiPrompt = document.getElementById('aiPrompt');
         this.copyPromptBtn = document.getElementById('copyPromptBtn');
         this.generateBtn = document.getElementById('generateWithAI');
@@ -16,7 +15,6 @@ class CustomCSSManager {
     init() {
         this.loadSavedCSS();
         this.addEventListeners();
-        this.setupTemplates();
         this.setupAIPrompt();
     }
     
@@ -30,7 +28,7 @@ class CustomCSSManager {
             const defaultCSS = `.calculator {
     background-color: #3d1d5a;
     border: 4px solid #000000;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 10px 10px 0 #000000;
 }
 .display {
@@ -39,11 +37,11 @@ class CustomCSSManager {
     border-bottom: 3px solid #fbc02d;
 }
 .previous-operand { color: #fbc02d; }
-.current-operand { font-size: 2.5rem; font-family: monospace; }
+.current-operand { font-size: 2rem; font-family: monospace; }
 .btn {
     background-color: #1a092c;
     border: 2px solid #000000;
-    border-radius: 10px;
+    border-radius: 12px;
     color: #ffffff;
 }
 .btn:active { transform: translate(3px, 3px); }
@@ -72,7 +70,7 @@ class CustomCSSManager {
         if (confirm('Yakin ingin mereset semua CSS custom?')) {
             localStorage.removeItem('customCalculatorCSS');
             this.loadSavedCSS();
-            this.showToast('🔄 CSS direset ke default COMIC PUNK');
+            this.showToast('🔄 CSS direset ke default');
         }
     }
     
@@ -83,7 +81,8 @@ class CustomCSSManager {
     }
     
     setupAIPrompt() {
-        this.aiPrompt.value = `"Buatkan CSS untuk kalkulator dengan tema COMIC PUNK, warna ungu #1a092c, emas #fbc02d, cyan #00e5ff, border tebal hitam 4px, efek pressed saat di klik, bayangan kotak 10px 10px 0 hitam, gaya komik"`;
+        // Ganti isi prompt sesuai perintah JHON
+        this.aiPrompt.value = `BUATKAN SAYA KODE CSS UNTUK TAMPILAN KALKULATOR`;
         
         this.copyPromptBtn.addEventListener('click', () => {
             this.aiPrompt.select();
@@ -100,105 +99,6 @@ class CustomCSSManager {
                     window.open('https://chat.openai.com', '_blank');
                 }
             }
-        });
-    }
-    
-    loadTemplate(templateName) {
-        const templates = {
-            'comic-punk': `.calculator {
-    background-color: #3d1d5a;
-    border: 4px solid #000000;
-    border-radius: 15px;
-    box-shadow: 10px 10px 0 #000000;
-}
-.display {
-    background-color: #000000;
-    color: #00e5ff;
-    border-bottom: 3px solid #fbc02d;
-}
-.previous-operand { color: #fbc02d; }
-.current-operand { font-size: 2.5rem; font-family: monospace; }
-.btn {
-    background-color: #1a092c;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    color: #ffffff;
-}
-.btn:active { transform: translate(3px, 3px); }
-.btn-operator { background-color: #00e5ff; color: #000000; }
-.btn-function { background-color: #fbc02d; color: #000000; }
-.btn-equals { background-color: #00e5ff; color: #000000; }`,
-            
-            neon: `.calculator {
-    background: #0a0a0a;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 30px rgba(0,255,0,0.3);
-    border-radius: 20px;
-}
-.display { background: #001a00; color: #00ff00; font-family: monospace; text-shadow: 0 0 5px #00ff00; }
-.btn { background: #1a1a1a; color: #00ff00; border: 1px solid #00ff00; border-radius: 10px; }
-.btn:hover { background: #00ff00; color: #0a0a0a; box-shadow: 0 0 10px #00ff00; transform: scale(1.05); }
-.btn-equals { background: #00ff00; color: #0a0a0a; }`,
-            
-            glass: `.calculator {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-.display { background: rgba(0,0,0,0.3); backdrop-filter: blur(5px); color: white; }
-.btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); color: white; border-radius: 15px; }
-.btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
-.btn-equals { background: linear-gradient(135deg, #667eea, #764ba2); }`,
-            
-            galaxy: `.calculator {
-    background: radial-gradient(circle at 30% 10%, #1a0033, #0a0015);
-    border: 1px solid #ffd700;
-    box-shadow: 0 0 40px rgba(255,215,0,0.2);
-    border-radius: 30px;
-}
-.display { background: rgba(0,0,0,0.5); color: #ffd700; font-family: monospace; text-shadow: 0 0 10px #ffd700; }
-.btn { background: rgba(26,0,51,0.8); color: #ffd700; border-radius: 50%; border: 1px solid #ffd700; }
-.btn:hover { background: #ffd700; color: #1a0033; transform: rotate(3deg) scale(1.05); }
-.btn-equals { background: #ffd700; color: #1a0033; }`,
-            
-            minimal: `.calculator {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.display { background: #f8f9fa; color: #212529; }
-.btn { background: #ffffff; color: #495057; border-radius: 8px; border: 1px solid #e9ecef; }
-.btn:hover { background: #f8f9fa; }
-.btn-operator { color: #0d6efd; }
-.btn-equals { background: #0d6efd; color: white; }`,
-            
-            sunset: `.calculator {
-    background: linear-gradient(135deg, #ff6b6b, #feca57);
-    border-radius: 30px;
-}
-.display { background: rgba(0,0,0,0.2); color: #fff4e6; }
-.btn { background: rgba(255,255,255,0.2); color: #fff4e6; border-radius: 50%; margin: 4px; }
-.btn:hover { background: rgba(255,255,255,0.4); transform: rotate(3deg); }
-.btn-operator { background: rgba(255,107,107,0.8); }
-.btn-equals { background: #feca57; color: #ff6b6b; }`
-        };
-        
-        const css = templates[templateName];
-        if (css) {
-            this.textarea.value = css;
-            this.applyCSS(css);
-            this.saveCSS(css);
-            this.showToast(`✅ Template "${templateName}" diterapkan!`);
-        }
-    }
-    
-    setupTemplates() {
-        this.templateBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const template = btn.dataset.template;
-                this.loadTemplate(template);
-            });
         });
     }
     
