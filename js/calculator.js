@@ -103,6 +103,7 @@ class Calculator {
         document.querySelector('[data-action="delete"]')?.addEventListener('click', () => this.delete());
         document.querySelector('[data-action="equals"]')?.addEventListener('click', () => this.compute());
 
+        // Keyboard support
         document.addEventListener('keydown', (e) => {
             if (/[0-9]/.test(e.key)) this.appendNumber(e.key);
             if (e.key === '.') this.appendNumber('.');
