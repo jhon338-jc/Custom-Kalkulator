@@ -3,88 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#4c1d95">
-    <meta name="description" content="Kalkulator dengan custom CSS - Generate dengan AI!">
-    <title>⚡ Deep Jhon CSS Kalkulator</title>
+    <meta name="theme-color" content="#1a092c">
+    <meta name="description" content="Kalkulator dengan custom CSS - Style Comic Punk!">
+    <title>⚡ JHON CSS KALKULATOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/css/style.css">
     <style id="custom-css"></style>
 </head>
 <body>
     <div class="app">
-        <!-- SISI KIRI - EDITOR -->
+        <!-- SISI KIRI - COMIC CARD -->
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <h1>Deep Jhon<span>CSS</span></h1>
-                </div>
+            <div class="logo">
+                <h1>⚡JHON CSS⚡</h1>
                 <p>Tempel / Generate CSS untuk kalkulator kamu!</p>
             </div>
             
             <!-- AREA PROMPT AI -->
             <div class="ai-prompt-area">
                 <div class="prompt-label">
-                    <span>🤖 AI Prompt Generator</span>
-                    <button id="copyPromptBtn" class="copy-prompt-btn" title="Salin prompt">📋 Salin</button>
+                    <span>🤖 AI PROMPT GENERATOR</span>
+                    <button id="copyPromptBtn" class="copy-prompt-btn">📋 SALIN</button>
                 </div>
-                <textarea id="aiPrompt" rows="3" placeholder="Contoh prompt untuk AI:&#10;&#10;'Buatkan CSS untuk kalkulator dengan tema galaxy, warna ungu keemasan, tombol bulat, efek glow, font sci-fi'"></textarea>
+                <textarea id="aiPrompt" rows="3" placeholder="Contoh prompt untuk AI:&#10;&#10;'Buatkan CSS untuk kalkulator dengan tema comic punk, warna ungu keemasan, tombol kotak tebal, efek pressed, gaya komik'"></textarea>
                 <button id="generateWithAI" class="ai-generate-btn">
-                    <span>✨</span> Generate dengan AI
+                    ✨ GENERATE DENGAN AI
                 </button>
                 <div class="ai-note">
-                    💡 <strong>Copy prompt di atas</strong> → tempel ke ChatGPT/Claude/Gemini → hasil CSS tempel di bawah
+                    💡 COPY prompt di atas → tempel ke ChatGPT/Claude/Gemini → hasil CSS tempel di bawah
                 </div>
             </div>
             
             <!-- EDITOR CSS -->
             <div class="editor-area">
                 <div class="editor-toolbar">
-                    <span class="editor-title">📝 Kode CSS Kamu</span>
+                    <span class="editor-title">📝 KODE CSS KAMU</span>
                     <div class="toolbar-buttons">
-                        <button id="clearBtn" class="icon-btn" title="Hapus semua">🗑️</button>
-                        <button id="resetBtn" class="icon-btn" title="Reset ke default">🔄</button>
+                        <button id="clearBtn" class="icon-btn">🗑️ HAPUS</button>
+                        <button id="resetBtn" class="icon-btn">🔄 RESET</button>
                     </div>
                 </div>
                 <textarea id="cssInput" placeholder="/* Tulis atau tempel CSS custom kamu di sini */
-/* Hasil dari AI bisa langsung tempel di sini! */
-
-.calculator {
-    background: linear-gradient(135deg, #4c1d95, #7c3aed);
-    border-radius: 28px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-.display {
-    background: #2d1b4e;
-    color: #e9d5ff;
-}
-
-.btn {
-    background: #3b1e6b;
-    color: #e9d5ff;
-    border-radius: 16px;
-}
-
-.btn:hover {
-    background: #7c3aed;
-    transform: scale(1.02);
-}"></textarea>
+/* Hasil dari AI bisa langsung tempel di sini! */"></textarea>
             </div>
             
             <div class="action-buttons">
-                <button id="applyBtn" class="btn-primary">✨ Terapkan CSS</button>
+                <button id="applyBtn" class="btn-primary">✨ TERAPKAN CSS</button>
             </div>
             
             <div class="templates">
-                <h3>📚 Template Siap Pakai</h3>
+                <h3>📚 TEMPLATE SIAP PAKAI</h3>
                 <div class="template-grid">
-                    <button class="template-card" data-template="dark-purple">🟣 Dark Ungu</button>
-                    <button class="template-card" data-template="neon">💚 Neon Hijau</button>
-                    <button class="template-card" data-template="glass">🔮 Glassmorph</button>
-                    <button class="template-card" data-template="galaxy">🌌 Galaxy</button>
-                    <button class="template-card" data-template="minimal">⚪ Minimalis</button>
-                    <button class="template-card" data-template="sunset">🌅 Sunset</button>
+                    <button class="template-card" data-template="comic-punk">💥 COMIC PUNK</button>
+                    <button class="template-card" data-template="neon">💚 NEON HIJAU</button>
+                    <button class="template-card" data-template="glass">🔮 GLASSMORPH</button>
+                    <button class="template-card" data-template="galaxy">🌌 GALAXY</button>
+                    <button class="template-card" data-template="minimal">⚪ MINIMALIS</button>
+                    <button class="template-card" data-template="sunset">🌅 SUNSET</button>
                 </div>
             </div>
         </aside>
@@ -92,7 +68,7 @@
         <!-- SISI KANAN - PREVIEW KALKULATOR -->
         <main class="main">
             <div class="calculator-preview">
-                <div class="preview-label">📱 Live Preview</div>
+                <div class="preview-label">📱 LIVE PREVIEW</div>
                 <div class="calculator">
                     <div class="display">
                         <div class="previous-operand" id="previousOperand"></div>
