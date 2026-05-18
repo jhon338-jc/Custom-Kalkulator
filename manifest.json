@@ -1,11 +1,10 @@
 {
-  "name": "Custom CSS Kalkulator",
-  "short_name": "CSS Kalkulator",
-  "description": "Kalkulator dengan custom CSS - Bebas desain!",
+  "name": "JHON CSS Kalkulator",
+  "short_name": "JHON Kalkulator",
+  "description": "Kalkulator dengan custom CSS - Style Comic Punk!",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#1e293b",
-  "background_color": "#0f172a",
-  "orientation": "portrait",
-  "icons": []
+  "theme_color": "#1a092c",
+  "background_color": "#1a092c",
+  "orientation": "portrait"
 }
