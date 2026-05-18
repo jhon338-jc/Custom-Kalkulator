@@ -26,55 +26,30 @@ class CustomCSSManager {
             this.textarea.value = savedCSS;
             this.applyCSS(savedCSS);
         } else {
-            // Set default dark purple theme
+            // Default COMIC PUNK theme
             const defaultCSS = `.calculator {
-    background: linear-gradient(135deg, #2d1b4e, #1a0b2e);
-    border-radius: 28px;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    background-color: #3d1d5a;
+    border: 4px solid #000000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0 #000000;
 }
-
 .display {
-    background: #0f0720;
-    color: #e9d5ff;
+    background-color: #000000;
+    color: #00e5ff;
+    border-bottom: 3px solid #fbc02d;
 }
-
-.previous-operand {
-    color: #c084fc;
-}
-
-.current-operand {
-    color: #e9d5ff;
-}
-
+.previous-operand { color: #fbc02d; }
+.current-operand { font-size: 2.5rem; font-family: monospace; }
 .btn {
-    background: #2d1b4e;
-    color: #e9d5ff;
-    border-radius: 16px;
+    background-color: #1a092c;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    color: #ffffff;
 }
-
-.btn-number {
-    background: #1a1030;
-}
-
-.btn-operator {
-    background: #3b1e6b;
-    color: #c084fc;
-}
-
-.btn-function {
-    color: #f472b6;
-}
-
-.btn-equals {
-    background: linear-gradient(135deg, #7c3aed, #a78bfa);
-    color: white;
-}
-
-.btn:hover {
-    transform: scale(1.02);
-    background: #7c3aed;
-}`;
+.btn:active { transform: translate(3px, 3px); }
+.btn-operator { background-color: #00e5ff; color: #000000; }
+.btn-function { background-color: #fbc02d; color: #000000; }
+.btn-equals { background-color: #00e5ff; color: #000000; }`;
             this.textarea.value = defaultCSS;
             this.applyCSS(defaultCSS);
         }
@@ -95,11 +70,9 @@ class CustomCSSManager {
     
     resetToDefault() {
         if (confirm('Yakin ingin mereset semua CSS custom?')) {
-            this.textarea.value = '';
-            this.styleElement.textContent = '';
             localStorage.removeItem('customCalculatorCSS');
             this.loadSavedCSS();
-            this.showToast('🔄 CSS direset ke default dark ungu');
+            this.showToast('🔄 CSS direset ke default COMIC PUNK');
         }
     }
     
@@ -110,25 +83,19 @@ class CustomCSSManager {
     }
     
     setupAIPrompt() {
-        // Set default prompt
-        this.aiPrompt.value = `"Buatkan CSS untuk kalkulator dengan tema dark purple galaxy, warna ungu keemasan, tombol bulat elegan, efek glow, font modern sci-fi, border gradient, hover effect scale"`;
+        this.aiPrompt.value = `"Buatkan CSS untuk kalkulator dengan tema COMIC PUNK, warna ungu #1a092c, emas #fbc02d, cyan #00e5ff, border tebal hitam 4px, efek pressed saat di klik, bayangan kotak 10px 10px 0 hitam, gaya komik"`;
         
-        // Copy prompt button
         this.copyPromptBtn.addEventListener('click', () => {
             this.aiPrompt.select();
             document.execCommand('copy');
             this.showToast('📋 Prompt berhasil disalin! Tempelkan ke ChatGPT/Claude/Gemini');
         });
         
-        // Generate button - open AI
         this.generateBtn.addEventListener('click', () => {
             const prompt = this.aiPrompt.value;
             if (prompt) {
-                // Copy prompt to clipboard and open AI
                 navigator.clipboard.writeText(prompt);
                 this.showToast('✅ Prompt disalin! Buka ChatGPT/Claude/Gemini dan tempelkan');
-                
-                // Optional: open ChatGPT
                 if (confirm('Buka ChatGPT untuk generate CSS? (Klik OK untuk membuka)')) {
                     window.open('https://chat.openai.com', '_blank');
                 }
@@ -138,19 +105,29 @@ class CustomCSSManager {
     
     loadTemplate(templateName) {
         const templates = {
-            'dark-purple': `.calculator {
-    background: linear-gradient(135deg, #2d1b4e, #1a0b2e);
-    border-radius: 28px;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-    border: 1px solid rgba(124, 58, 237, 0.3);
+            'comic-punk': `.calculator {
+    background-color: #3d1d5a;
+    border: 4px solid #000000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0 #000000;
 }
-.display { background: #0f0720; color: #e9d5ff; }
-.btn { background: #2d1b4e; color: #e9d5ff; border-radius: 16px; }
-.btn-number { background: #1a1030; }
-.btn-operator { background: #3b1e6b; color: #c084fc; }
-.btn-function { color: #f472b6; }
-.btn-equals { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white; }
-.btn:hover { transform: scale(1.02); background: #7c3aed; }`,
+.display {
+    background-color: #000000;
+    color: #00e5ff;
+    border-bottom: 3px solid #fbc02d;
+}
+.previous-operand { color: #fbc02d; }
+.current-operand { font-size: 2.5rem; font-family: monospace; }
+.btn {
+    background-color: #1a092c;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    color: #ffffff;
+}
+.btn:active { transform: translate(3px, 3px); }
+.btn-operator { background-color: #00e5ff; color: #000000; }
+.btn-function { background-color: #fbc02d; color: #000000; }
+.btn-equals { background-color: #00e5ff; color: #000000; }`,
             
             neon: `.calculator {
     background: #0a0a0a;
@@ -180,7 +157,7 @@ class CustomCSSManager {
     box-shadow: 0 0 40px rgba(255,215,0,0.2);
     border-radius: 30px;
 }
-.display { background: rgba(0,0,0,0.5); color: #ffd700; font-family: 'Orbitron', monospace; text-shadow: 0 0 10px #ffd700; }
+.display { background: rgba(0,0,0,0.5); color: #ffd700; font-family: monospace; text-shadow: 0 0 10px #ffd700; }
 .btn { background: rgba(26,0,51,0.8); color: #ffd700; border-radius: 50%; border: 1px solid #ffd700; }
 .btn:hover { background: #ffd700; color: #1a0033; transform: rotate(3deg) scale(1.05); }
 .btn-equals { background: #ffd700; color: #1a0033; }`,
